@@ -1,36 +1,27 @@
-using System;
-
 internal class Program
 {
     private static void Main(string[] args)
     {
-        string name = "";
-        char symbol;
-        int nameLenght = name.Length;
-        int i = 0;
-        int j = 0;
+        string nameInput = "";
+        char symbolInput;
+        int nameLenght;
+        string symbolLine = "";
+        string middleLine;
 
         Console.Write("Введите ваше имя: ");
-        name = Console.ReadLine();
+        nameInput = Console.ReadLine();
         Console.Write("Введите символ: ");
-        symbol = Convert.ToChar(Console.ReadLine());
-        Console.SetCursorPosition(0, 5);
+        symbolInput = Convert.ToChar(Console.ReadLine());
+        middleLine = symbolInput + nameInput + symbolInput;
 
-        while (i++ < name.Length +4)
+        for (int i = 0; i < middleLine.Length; i++)
         {
-            Console.Write(symbol);
+            symbolLine += symbolInput;
         }
 
-        Console.SetCursorPosition(0, 6);
-        Console.WriteLine(symbol + " " + name + " " + symbol);
-
-        while (j++ <name.Length + 4)
-        {
-            Console.Write(symbol);
-        }
-
-        Console.SetCursorPosition(0, 7);
+        Console.WriteLine(symbolLine);
+        Console.WriteLine(middleLine);
+        Console.WriteLine(symbolLine);
         Console.ReadKey();
     }
-}   
-   
+}
